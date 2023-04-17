@@ -1,0 +1,52 @@
+@import 'vendor/normalize.scss';
+@import 'variables.scss';
+
+
+@font-face {
+  font-weight: 400;
+  font-family: 'IBMPlexMono';
+  src: url('../../assets/fonts/IBMPlexMono-Regular.woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: 'IBMPlexMono';
+  src: url('../../assets/fonts/IBMPlexMono-Bold.woff2');
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: 'BarlowCondensed';
+  src: url('../../assets/fonts/BarlowCondensed-SemiBold.woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: 'BarlowCondensed';
+  src: url('../../assets/fonts/BarlowCondensed-Bold.woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: 'Benzin';
+  src: url('../../assets/fonts/benzin-bold.woff2');
+}
+
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  font-weight: 400;
+  font-family: 'IBMPlexMono', sans-serif;
+}
+
+
+html {
+  overflow-x: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
