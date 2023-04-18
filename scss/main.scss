@@ -1,5 +1,8 @@
 @import 'vendor/normalize.scss';
 @import 'variables.scss';
+@import 'components.scss';
+@import 'sections/header.scss';
+@import 'sections/hero.scss';
 
 
 @font-face {
@@ -9,9 +12,9 @@
 }
 
 @font-face {
-  font-weight: 700;
+  font-weight: 600;
   font-family: 'IBMPlexMono';
-  src: url('../../assets/fonts/IBMPlexMono-Bold.woff2');
+  src: url('../../assets/fonts/IBMPlexMono-SemiBold.woff2');
 }
 
 @font-face {
@@ -37,9 +40,10 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #000000;
+  color: #282727;
   font-weight: 400;
   font-family: 'IBMPlexMono', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 

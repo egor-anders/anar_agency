@@ -1,0 +1,30 @@
+.hero {
+  border-bottom: 1px solid #282727;
+
+  &__container {
+    padding-top: 54px;
+    padding-bottom: 150px;
+  }
+
+  &__greeting {
+    margin-bottom: 7px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__title {
+    margin-bottom: 77px;
+  }
+
+  &__descr {
+    max-width: 630px;
+  }
+
+  &__button {
+    width: 325px;
+  }
+}
