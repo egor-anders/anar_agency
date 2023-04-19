@@ -1,0 +1,26 @@
+.connect {
+  background: $color-main;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 72px;
+    padding-bottom: 83px;
+  }
+
+  &__title {
+    max-width: 1000px;
+    margin-bottom: 26px;
+    color: $color-brand;
+  }
+
+  &__text {
+    max-width: 670px;
+  }
+
+  &__button {
+    width: 325px;
+    background-color: #FF6700;
+  }
+}
