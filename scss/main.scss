@@ -10,6 +10,7 @@
 @import 'sections/works.scss';
 @import 'sections/footer.scss';
 @import 'sections/menu.scss';
+@import 'sections/modal.scss';
 
 
 @font-face {
@@ -44,6 +45,7 @@
 
 
 body {
+  position: relative;
   box-sizing: border-box;
   margin: 0;
   padding: 0;

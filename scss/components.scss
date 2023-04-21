@@ -230,3 +230,39 @@ a {
     background-image: url("data:image/svg+xml,%3Csvg width='356' height='405' viewBox='0 0 356 405' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_f_230_699)'%3E%3Cpath d='M165.262 130.639C118.554 130.639 62.2923 80.5624 40 55.5239L316 40V365C309.277 356.487 291.691 332.75 275.131 305.909C254.431 272.357 284.154 229.291 260.269 226.287C236.385 223.282 219.931 197.242 235.854 176.21C251.777 155.177 223.646 130.639 165.262 130.639Z' fill='%23FF6700'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f_230_699' x='0' y='0' width='356' height='405' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='20' result='effect1_foregroundBlur_230_699'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
   }
 }
+
+
+.itc-slider__btn {
+  background: none !important;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+
+  &:hover {
+    background: none !important;
+  }
+
+
+  &::before {
+    width: 31px;
+    height: 24px;
+  }
+
+  &_next {
+    right: calc(-50px - 31px);
+
+
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg width='31' height='24' viewBox='0 0 31 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30.0607 13.0607C30.6464 12.4749 30.6464 11.5251 30.0607 10.9393L20.5147 1.3934C19.9289 0.807611 18.9792 0.807611 18.3934 1.3934C17.8076 1.97919 17.8076 2.92893 18.3934 3.51472L26.8787 12L18.3934 20.4853C17.8076 21.0711 17.8076 22.0208 18.3934 22.6066C18.9792 23.1924 19.9289 23.1924 20.5147 22.6066L30.0607 13.0607ZM0 13.5L29 13.5V10.5L0 10.5L0 13.5Z' fill='%23282727'/%3E%3C/svg%3E%0A");
+    }
+  }
+
+  &_prev {
+    left: calc(-34px - 31px);
+
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg width='31' height='24' viewBox='0 0 31 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.939341 10.9393C0.353554 11.5251 0.353554 12.4749 0.93934 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97918 12.6066 1.3934C12.0208 0.80761 11.0711 0.80761 10.4853 1.3934L0.939341 10.9393ZM31 10.5L2 10.5L2 13.5L31 13.5L31 10.5Z' fill='%23282727'/%3E%3C/svg%3E%0A");
+    }
+  }
+}
