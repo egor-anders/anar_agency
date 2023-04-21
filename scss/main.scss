@@ -8,6 +8,8 @@
 @import 'sections/accordion.scss';
 @import 'sections/connect.scss';
 @import 'sections/works.scss';
+@import 'sections/footer.scss';
+@import 'sections/menu.scss';
 
 
 @font-face {
@@ -54,6 +56,7 @@ body {
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .no-scroll {

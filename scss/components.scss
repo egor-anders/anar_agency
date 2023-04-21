@@ -5,6 +5,7 @@
 
   @media (max-width: $breakpoint-xl) {
     width: 100%;
+    padding: 0 20px;
   }
 
   @media (max-width: $breakpoint-mobile) {
@@ -19,6 +20,18 @@ h1 {
   font-family: 'BarlowCondensed', sans-serif;
   line-height: 80%;
   text-transform: uppercase;
+
+  @media (max-width: $breakpoint-xl) {
+    font-size: 134px;
+  }
+
+  @media (max-width: $breakpoint-tb) {
+    font-size: 94px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 40px;
+  }
 }
 
 h2 {
@@ -29,9 +42,21 @@ h2 {
   line-height: 90%;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+
+  @media (max-width: $breakpoint-xl) {
+    font-size: 95px;
+  }
+
+  @media (max-width: $breakpoint-tb) {
+    font-size: 65px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 36px;
+  }
 }
 
-h3 {
+h3, .subtitle {
   margin: 0;
   font-weight: 700;
   font-size: 46px;
@@ -40,6 +65,14 @@ h3 {
   line-height: 150%;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+
+  @media (max-width: $breakpoint-xl) {
+    font-size: 40px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 22px;
+  }
 }
 
 
@@ -51,9 +84,29 @@ h3 {
   line-height: 150%;
   letter-spacing: -0.03em;
 
+  @media (max-width: $breakpoint-tb) {
+    font-size: 16px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 14px;
+  }
+
   &--big {
     font-size: 24px;
     letter-spacing: -0.02em;
+
+    @media (max-width: $breakpoint-xl) {
+      font-size: 22px;
+    }
+
+    @media (max-width: $breakpoint-tb) {
+      font-size: 19px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 16px;
+    }
   }
 
   &--light {
@@ -65,12 +118,14 @@ h3 {
   display: flex;
   justify-content: center;
   width: 325px;
-  padding: 9px 0;
+  padding: 10px 0;
   background-color: #282727;
 
-  &--orange {
-    background-color: #FF6700;
+
+  @media (max-width: $breakpoint-tb) {
+    width: 100%;
   }
+
 
   span {
     position: relative;
@@ -91,8 +146,42 @@ h3 {
       width: 25px;
       height: 25px;
       background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.5061 24.0061C23.3345 24.0061 24.0061 23.3345 24.0061 22.5061L24.0061 9.0061C24.0061 8.17767 23.3345 7.5061 22.5061 7.5061C21.6777 7.5061 21.0061 8.17767 21.0061 9.0061L21.0061 21.0061L9.0061 21.0061C8.17767 21.0061 7.5061 21.6777 7.5061 22.5061C7.5061 23.3345 8.17767 24.0061 9.0061 24.0061L22.5061 24.0061ZM0.93934 3.06066L21.4454 23.5668L23.5668 21.4454L3.06066 0.93934L0.93934 3.06066Z' fill='%23E6E6E6'/%3E%3C/svg%3E%0A");
-      transform: translateY(-50%);
+      background-size: cover;
+      transition: all 0.2s;
+      transform: translateY(-55%);
       content: '';
+    }
+
+
+    @media (max-width: $breakpoint-mobile) {
+      padding-right: 28px;
+      font-size: 16px;
+
+      &::after {
+        width: 16px;
+        height: 16px;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 16C15.5523 16 16 15.5523 16 15L16 6C16 5.44771 15.5523 5 15 5C14.4477 5 14 5.44772 14 6L14 14H6C5.44772 14 5 14.4477 5 15C5 15.5523 5.44772 16 6 16L15 16ZM0.292893 1.70711L14.2929 15.7071L15.7071 14.2929L1.70711 0.292893L0.292893 1.70711Z' fill='%23E6E6E6'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+
+  &:hover {
+    background-color: $color-brand;
+
+    span::after {
+      transform: translateY(-55%) rotate(-90deg);
+    }
+  }
+
+  &--orange {
+    background-color: #FF6700;
+
+    &:hover {
+      background-color: $color-main;
+
+      span::after {
+        transform: translateY(-55%) rotate(-90deg);
+      }
     }
   }
 }
@@ -127,4 +216,17 @@ a {
   width: 1413px;
   height: 1192px;
   background-image: url("data:image/svg+xml,%3Csvg width='1413' height='1192' viewBox='0 0 1413 1192' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_f_230_586)'%3E%3Cpath d='M669.517 377.365C567.935 362.173 377.728 316.397 295.323 295.408C257.178 285.878 159.881 174.499 116 120L1293 138.99V1072H1043.71C1035.42 1041.68 1023.81 969.454 1043.71 923.078C1068.59 865.109 1026.09 812.636 936.428 747.67C846.766 682.704 1008.47 593.751 981.517 499.801C954.567 405.85 791.829 499.801 721.862 475.813C651.895 451.826 796.494 396.355 669.517 377.365Z' fill='%23FF6700'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f_230_586' x='-4' y='0' width='1417' height='1192' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='60' result='effect1_foregroundBlur_230_586'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+
+  @media (max-width: $breakpoint-xl) {
+    top: -330px;
+    right: -370px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    top: -85px;
+    right: -80px;
+    width: 356px;
+    height: 405px;
+    background-image: url("data:image/svg+xml,%3Csvg width='356' height='405' viewBox='0 0 356 405' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_f_230_699)'%3E%3Cpath d='M165.262 130.639C118.554 130.639 62.2923 80.5624 40 55.5239L316 40V365C309.277 356.487 291.691 332.75 275.131 305.909C254.431 272.357 284.154 229.291 260.269 226.287C236.385 223.282 219.931 197.242 235.854 176.21C251.777 155.177 223.646 130.639 165.262 130.639Z' fill='%23FF6700'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f_230_699' x='0' y='0' width='356' height='405' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='20' result='effect1_foregroundBlur_230_699'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+  }
 }

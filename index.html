@@ -12,6 +12,29 @@
   </head>
 
   <body class="body">
+    <div class="menu">
+      <div class="container">
+        <div class="menu__cross">
+          <svg viewBox="0 0 37 37" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" x2="37" y1="0" y2="37" />
+            <line x1="0" x2="37" y1="37" y2="0" />
+          </svg>
+        </div>
+
+        <div class="menu__wrapper">
+          <a href="#" class="menu__logo">anar agency</a>
+          <div class="menu__list">
+            <a class="text menu__item" href="#about" >About</a>
+            <a class="text menu__item" href="#works" >Works</a>
+            <a class="text menu__item" href="#services">Services</a>
+          </div>
+          <div class="menu__links">
+            <a href="mailto:info@anar.at" class="menu__link">info@anar.at</a>
+            <a href="tel:+491756666066" class="menu__link">+49 175 6666066</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="wrapper">
       <div class="wrapper__content">
         <header class="header">
@@ -19,12 +42,13 @@
             <a href="#" class="header__logo">anar agency</a>
             <nav class="header__nav">
               <ul class="header__nav-list">
-                <li class="header__nav-item"><a href="#" class="header__link">About</a></li>
-                <li class="header__nav-item"><a href="#" class="header__link">Works</a></li>
-                <li class="header__nav-item"><a href="#" class="header__link">Services</a></li>
-                <li class="header__nav-item"><a href="#" class="header__link">Contact</a></li>
+                <li class="header__nav-item"><a href="#about" class="header__link">About</a></li>
+                <li class="header__nav-item"><a href="#works" class="header__link">Works</a></li>
+                <li class="header__nav-item"><a href="#services" class="header__link">Services</a></li>
+                <li class="header__nav-item"><a href="#footer" class="header__link">Contact</a></li>
               </ul>
             </nav>
+            <div class="header__menu-btn"></div>
           </div>
         </header>
 
@@ -43,10 +67,18 @@
 
         <div class="ticker">
           <div class="ticker__wrapper">
-            <div class="ticker__item text">SMM <span>/</span> SEO <span>/</span> BRANDING <span>/</span> MARKETING <span>/</span> WEB DESIGN</div>
-            <div class="ticker__item text">SMM <span>/</span> SEO <span>/</span> BRANDING <span>/</span> MARKETING <span>/</span> WEB DESIGN</div>
-            <div class="ticker__item text">SMM <span>/</span> SEO <span>/</span> BRANDING <span>/</span> MARKETING <span>/</span> WEB DESIGN</div>
-            <div class="ticker__item text">SMM <span>/</span> SEO <span>/</span> BRANDING <span>/</span> MARKETING <span>/</span> WEB DESIGN</div>
+            <div class="ticker__item text">
+              SMM <span>/</span> SEO <span>/</span> BRANDING <span>/</span> MARKETING <span>/</span> WEB DESIGN <span>/</span>
+            </div>
+            <div class="ticker__item text">
+              SMM <span>/</span> SEO <span>/</span> BRANDING <span>/</span> MARKETING <span>/</span> WEB DESIGN <span>/</span>
+            </div>
+            <div class="ticker__item text">
+              SMM <span>/</span> SEO <span>/</span> BRANDING <span>/</span> MARKETING <span>/</span> WEB DESIGN <span>/</span>
+            </div>
+            <div class="ticker__item text">
+              SMM <span>/</span> SEO <span>/</span> BRANDING <span>/</span> MARKETING <span>/</span> WEB DESIGN <span>/</span>
+            </div>
           </div>
         </div>
       </div>
@@ -54,7 +86,7 @@
       <div class="wrapper__bg"></div>
     </div>
 
-    <section class="message">
+    <section class="message" id="services">
       <div class="container">
         <h2 class="message__title">Unsere Lösungen bringen Ihrem Unternehmen Gewinn</h2>
       </div>
@@ -64,7 +96,7 @@
       <ul class="accordion__list">
         <li class="accordion__item">
           <div class="container">
-            <button class="accordion__button"><h3>Design</h3></button>
+            <button class="accordion__button"><span class="subtitle">Design</span></button>
             <div class="accordion__content">
               <p class="accordion__text text">
                 Wir entwickeln eine Corporate Identity, Brand Books, Logos, POS-Materialien, erstellen ein visuelles Identifikationssystem, führen
@@ -80,7 +112,7 @@
         </li>
         <li class="accordion__item">
           <div class="container">
-            <button class="accordion__button"><h3>KONTEXTWERBUNG</h3></button>
+            <button class="accordion__button"><span class="subtitle">KONTEXTWERBUNG</span></button>
             <div class="accordion__content">
               <p class="accordion__text text">
                 Wir entwickeln eine Corporate Identity, Brand Books, Logos, POS-Materialien, erstellen ein visuelles Identifikationssystem, führen
@@ -96,7 +128,7 @@
         </li>
         <li class="accordion__item">
           <div class="container">
-            <button class="accordion__button"><h3>SMM</h3></button>
+            <button class="accordion__button"><span class="subtitle">SMM</span></button>
             <div class="accordion__content">
               <p class="accordion__text text">
                 Wir entwickeln eine Corporate Identity, Brand Books, Logos, POS-Materialien, erstellen ein visuelles Identifikationssystem, führen
@@ -113,7 +145,7 @@
       </ul>
     </section>
 
-    <section class="connect">
+    <section class="connect" id="about">
       <div class="connect__wrapper container">
         <div class="connect__content">
           <h2 class="connect__title">We Connect Your Business With Market</h2>
@@ -126,18 +158,19 @@
             in der wir transparente und effektive Lösungen anbieten.
           </p>
         </div>
-        <a href="#" class="connect__button button"><span>learn more</span></a>
+        <a href="#" class="connect__button button button--orange"><span>learn more</span></a>
       </div>
     </section>
 
-    <section class="works">
+    <section class="works" id="works">
       <div class="container">
         <h2 class="works__title">works</h2>
 
         <ul class="works__cases">
           <li class="works__case">
             <div class="works__img">
-              <img src="/assets/img/smm-case.png" alt="" />
+              <img class="works__desk" src="/assets/img/smm-case.png" alt="" />
+              <img class="works__mobile" src="/assets/img/smm-case-mobile.png" alt="" />
             </div>
             <h3 class="works__subtitle">smm cases</h3>
             <p class="text works__text">Werbekampagnen und Publikumszuwachs</p>
@@ -154,6 +187,23 @@
         </ul>
       </div>
     </section>
+
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <a href="" class="footer__logo">anar agency</a>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item"><a class="text" href="#about">About</a></li>
+            <li class="footer__nav-item"><a class="text" href="#works">Works</a></li>
+            <li class="footer__nav-item"><a class="text" href="#services">Services</a></li>
+          </ul>
+          <div class="footer__links">
+            <a href="tel:+491756666066" class="footer__link footer__link--tel">+49 175 6666066</a>
+            <a href="mailto:info@anar.at" class="footer__link footer__link--mail">info@anar.at</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="/assets/js/main.js"></script>
   </body>
