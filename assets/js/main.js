@@ -84,3 +84,7 @@ triggers.forEach((trigger) => {
     } 
   });
 });
+
+console.log(document.querySelectorAll('.switch.disabled'));
+
+document.querySelectorAll('.switch.disabled').forEach((i) => i.addEventListener('click', (e) => e.stopPropagation()));
