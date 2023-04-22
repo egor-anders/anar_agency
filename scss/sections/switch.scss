@@ -4,14 +4,6 @@
   width: 37px;
   height: 22px;
 
-  &.disabled {
-    opacity: 0.8;
-
-    * {
-      cursor: default !important;
-    }
-  }
-
   input {
     width: 0;
     height: 0;
@@ -39,6 +31,20 @@
       border-radius: 50%;
       transition: 0.4s;
       content: '';
+    }
+  }
+
+  &.disabled {
+    .slider {
+      opacity: 0.6;
+
+      &::before {
+        opacity: 0.8;
+      }
+    }
+
+    * {
+      cursor: default !important;
     }
   }
 

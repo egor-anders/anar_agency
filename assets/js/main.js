@@ -85,6 +85,79 @@ triggers.forEach((trigger) => {
   });
 });
 
-console.log(document.querySelectorAll('.switch.disabled'));
-
 document.querySelectorAll('.switch.disabled').forEach((i) => i.addEventListener('click', (e) => e.stopPropagation()));
+
+/* ********** Cookie banner ********** */
+
+const LS_KEY_CS = 'CS';
+const LS_KEY_CGA = 'CGA';
+const LS_KEY_CM = 'CM';
+
+const bannerNode = document.getElementById('banner');
+const bannerSettingsNode = document.getElementById('banner-settings');
+
+const cookieSystemAccepted = window.localStorage.getItem(LS_KEY_CS);
+
+if (!cookieSystemAccepted) {
+  bannerNode.classList.add('banner_active');
+}
+
+document.getElementById('banner-close').addEventListener('click', () => {
+  window.localStorage.setItem(LS_KEY_CS, 1);
+  window.localStorage.setItem(LS_KEY_CGA, 1);
+  window.localStorage.setItem(LS_KEY_CM, 1);
+
+  bannerNode.classList.remove('banner_active');
+});
+
+document.getElementById('cookie-accept').addEventListener('click', () => {
+  const cookieAnalyticsValue = document.getElementById('cookie-analytics').checked;
+  const cookieMarketingValue = document.getElementById('cookie-marketing').checked;
+
+  window.localStorage.setItem(LS_KEY_CS, 1);
+
+  if (cookieAnalyticsValue) {
+    window.localStorage.setItem(LS_KEY_CGA, 1);
+  }
+
+  if (cookieMarketingValue) {
+    window.localStorage.setItem(LS_KEY_CM, 1);
+  }
+
+  bannerNode.classList.remove('banner_active');
+  
+  processCookies();
+});
+
+document.getElementById('cookie-accept-required').addEventListener('click', () => {
+  window.localStorage.setItem(LS_KEY_CS, 1);
+  bannerNode.classList.remove('banner_active');
+
+  processCookies();
+});
+
+document.getElementById('cookie-settings').addEventListener('click', () => {
+  bannerSettingsNode.classList.add('banner__settings_active');
+});
+
+processCookies();
+
+function processCookies () {
+  const cookieAnalyticsAccepted = window.localStorage.getItem(LS_KEY_CGA);
+  const cookieMarketingAccepted = window.localStorage.getItem(LS_KEY_CM);
+
+  if (cookieAnalyticsAccepted) {
+    console.log('CGA is active');
+  
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-XXXXXXX');
+  }
+  
+  if (cookieMarketingAccepted) {
+    console.log('CM is active');
+    // do whatever you want
+  }
+}
