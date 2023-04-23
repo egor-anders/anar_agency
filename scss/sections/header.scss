@@ -1,6 +1,10 @@
 .header {
   border-bottom: 1px solid #282727;
 
+  &--cookie {
+    border: none;
+  }
+
   @media (max-width: $breakpoint-mobile) {
     border: none;
   }
