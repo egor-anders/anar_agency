@@ -30,7 +30,7 @@
 .banner {
   position: fixed;
   right: 40px;
-  bottom: 110px;
+  bottom: 0;
   z-index: 9999;
   display: none;
   width: 578px;
@@ -74,6 +74,13 @@
     width: 14px;
     height: 14px;
     margin-right: 0;
+
+    @media (max-width: $breakpoint-mobile) {
+      top: 10px;
+      right: 10px;
+      width: 6px;
+      height: 6px;
+    }
   }
 
   &__button {
@@ -90,6 +97,12 @@
     background-color: transparent;
     cursor: pointer;
     size: 14px;
+
+    @media (max-width: $breakpoint-mobile) {
+      height: 20px;
+      font-size: 10px;
+      line-height: 130%;
+    }
 
     &_primary {
       color: #E6E6E6;
@@ -112,12 +125,23 @@
     padding: 25px 32px;
     background-color: #FFFFFF;
 
+    @media (max-width: $breakpoint-mobile) {
+      padding: 12px;
+    }
+
     p {
       margin: 0 0 16px;
       padding-right: 8px;
       font-size: 12px;
       line-height: 18px;
       letter-spacing: -0.03em;
+
+
+      @media (max-width: $breakpoint-mobile) {
+        margin: 0 0 4px;
+        font-size: 7px;
+        line-height: 150%;
+      }
     }
 
     .link {
@@ -129,6 +153,10 @@
       white-space: nowrap;
       text-decoration: underline;
       cursor: pointer;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 7px;
+      }
     }
   }
 
@@ -150,8 +178,16 @@
       align-items: center;
       height: 36px;
 
+      @media (max-width: $breakpoint-mobile) {
+        height: 22px;
+      }
+
       .switch {
         margin-right: 12px;
+
+        @media (max-width: $breakpoint-mobile) {
+          margin-right: 9px;
+        }
       }
 
       .subtitle {
@@ -160,6 +196,11 @@
         line-height: 36px;
         letter-spacing: -0.02em;
         text-transform: uppercase;
+
+        @media (max-width: $breakpoint-mobile) {
+          font-size: 10px;
+          line-height: 150%;
+        }
       }
 
       &::after {
@@ -176,6 +217,12 @@
       height: 21px;
       background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.837 10H3.16304C3.07337 10 3 10.0947 3 10.2105V11.7895C3 11.9053 3.07337 12 3.16304 12H17.837C17.9266 12 18 11.9053 18 11.7895V10.2105C18 10.0947 17.9266 10 17.837 10Z' fill='%23FF6700'/%3E%3Cpath d='M12 17.837L12 3.16304C12 3.07337 11.9053 3 11.7895 3L10.2105 3C10.0947 3 10 3.07337 10 3.16304L10 17.837C10 17.9266 10.0947 18 10.2105 18L11.7895 18C11.9053 18 12 17.9266 12 17.837Z' fill='%23FF6700'/%3E%3C/svg%3E%0A");
       cursor: pointer;
+
+      @media (max-width: $breakpoint-mobile) {
+        width: 10px;
+        height: 10px;
+        background-size: cover;
+      }
     }
 
     &--active {

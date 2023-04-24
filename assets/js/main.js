@@ -81,6 +81,12 @@ triggers.forEach((trigger) => {
         ItcSlider.getOrCreateInstance('.slider--smm');
       }, 200);
       document.querySelector('html').classList.add('no-scroll');
+    } else if (trigger.getAttribute('data-toggle') == 'design') {
+      document.querySelector('.modal--design').classList.add('modal--active');
+      setTimeout(()=> {
+        ItcSlider.getOrCreateInstance('.slider--design');
+      }, 200);
+      document.querySelector('html').classList.add('no-scroll');
     } 
   });
 });
