@@ -13,6 +13,58 @@
   </head>
 
   <body class="body">
+    <div class="modal modal--form">
+      <div class="modal__content modal__content--form">
+        <div class="modal__header modal__header--form">
+          <h3 class="modal__title modal__title--form">Web & Design – Hier entlang!</h3>
+          <h3 class="modal__title modal__title--form modal__title--mb">Web und Design - Hier entlang!</h3>
+          <p class="modal__descr">Digitalkontakt aufnehmen!</p>
+          <div class="modal__cross modal__cross--form"></div>
+        </div>
+        <form action="#" class="form" method="POST" enctype="multipart/form-data">
+          <div class="form__inputs">
+            <label class="form__label">
+              <input class="input input-name" type="text" data-validate-field="name" name="Name" placeholder="Wer bist du?" autofocus/>
+            </label>
+            <label class="form__label">
+              <input class="input input-mail" type="email" data-validate-field="email" name="Email" placeholder="Deine Email?" />
+            </label>
+            <label class="form__label">
+              <input class="input input-tel" type="tel" data-validate-field="tel" name="Phone" placeholder="Telefon für Rückfragen?" />
+            </label>
+            <label class="form__label">
+              <input class="input input-theme" type="text" data-validate-field="betreff" name="Theme" placeholder="Betreff?" />
+            </label>
+            <label class="form__label">
+              <textarea
+                class="textarea"
+                data-validate-field="textarea"
+                name="message"
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Jedes Detail zählt! Was hast du vor?"
+              ></textarea>
+            </label>
+          </div>
+          <div class="form__checkbox">
+            <input type="checkbox" class="custom-checkbox"  id="checkbox" name="checkbox">
+            <label class="custom-label" for="checkbox">Bitte bestätige die <a href="datenschutz.html" target="_blank">Datenschutzbestimmungen</a>  gelesen und verstanden zu haben, sowie die Übermittlung deiner Daten.</label>
+          </div>
+          <button class="modal__button form__button"><span>Senden</span></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal modal--thanks modal--active">
+      <div class="modal__content modal__content--thanks">
+        <div class="modal__header modal__header--thanks">
+          <h3 class="modal__title modal__title--thanks">Super, das hat geklappt! Du hörst bald von uns</h3>
+          <div class="modal__cross modal__cross--form"></div>
+        </div>
+      </div>
+    </div>
+
     <div id="banner" class="banner">
       <div class="banner-content">
         <p>
@@ -288,7 +340,7 @@
               <p class="hero__descr text text--big">
                 Webdesign, Webentwicklung, Webprogrammierung, Appentwicklung, Softwareentwicklung, Corporate Identity, SMM und SEO Optimierung
               </p>
-              <a href="#" class="button hero__button"><span>learn more</span></a>
+              <a href="#" data-toggle="mform" class="button hero__button"><span>learn more</span></a>
             </div>
           </div>
         </section>
@@ -386,7 +438,7 @@
             in der wir transparente und effektive Lösungen anbieten.
           </p>
         </div>
-        <a href="#" class="connect__button button button--orange"><span>learn more</span></a>
+        <a href="#" data-toggle="mform" class="connect__button button button--orange"><span>learn more</span></a>
       </div>
     </section>
 

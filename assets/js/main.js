@@ -34,16 +34,14 @@ function closeMenu() {
 }
 
 mobileCross.addEventListener('click', () => {
-  closeMenu(); 
+  closeMenu();
 });
 
 menuLinks.forEach((link) => {
   link.addEventListener('click', () => {
-    closeMenu(); 
+    closeMenu();
   });
 });
-
-
 
 const modals = document.querySelectorAll('.modal');
 const triggers = document.querySelectorAll('[data-toggle]');
@@ -51,7 +49,8 @@ modals.forEach((modal) => {
   const modalClose = modal.querySelector('.modal__cross');
 
   function hideModal() {
-    modal.classList.remove('modal--active');
+    // modal.classList.remove('modal--active');
+    $(modal).fadeOut(300);
     document.querySelector('html').classList.remove('no-scroll');
   }
 
@@ -76,18 +75,25 @@ triggers.forEach((trigger) => {
   trigger.addEventListener('click', (e) => {
     e.preventDefault();
     if (trigger.getAttribute('data-toggle') == 'smm') {
-      document.querySelector('.modal--smm').classList.add('modal--active');
-      setTimeout(()=> {
+      $('.modal--smm').fadeIn(300);
+      // document.querySelector('.modal--smm').classList.add('modal--active');
+      setTimeout(() => {
         ItcSlider.getOrCreateInstance('.slider--smm');
       }, 200);
       document.querySelector('html').classList.add('no-scroll');
     } else if (trigger.getAttribute('data-toggle') == 'design') {
-      document.querySelector('.modal--design').classList.add('modal--active');
-      setTimeout(()=> {
+      $('.modal--design').fadeIn(300);
+      // document.querySelector('.modal--design').classList.add('modal--active');
+      setTimeout(() => {
         ItcSlider.getOrCreateInstance('.slider--design');
       }, 200);
       document.querySelector('html').classList.add('no-scroll');
-    } 
+    } else if (trigger.getAttribute('data-toggle') == 'mform') {
+      $('.modal--form').fadeIn(300);
+      $('.input-name').focus();
+      // document.querySelector('.modal--form').classList.add('modal--active');
+      document.querySelector('html').classList.add('no-scroll');
+    }
   });
 });
 
@@ -131,7 +137,7 @@ document.getElementById('cookie-accept').addEventListener('click', () => {
   }
 
   bannerNode.classList.remove('banner_active');
-  
+
   processCookies();
 });
 
@@ -148,22 +154,38 @@ document.getElementById('cookie-settings').addEventListener('click', () => {
 
 processCookies();
 
-function processCookies () {
+function processCookies() {
   const cookieAnalyticsAccepted = window.localStorage.getItem(LS_KEY_CGA);
   const cookieMarketingAccepted = window.localStorage.getItem(LS_KEY_CM);
 
   if (cookieAnalyticsAccepted) {
     console.log('CGA is active');
-  
+
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
-    
+
     gtag('config', 'G-XXXXXXX');
   }
-  
+
   if (cookieMarketingAccepted) {
     console.log('CM is active');
     // do whatever you want
   }
 }
+
+let isRezeble = false;
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+    if (!isRezeble) {
+      $('.modal--form').fadeIn(300);
+      $('.input-name').focus();
+      // document.querySelector('.modal--form').classList.add('modal--active');
+      document.querySelector('html').classList.add('no-scroll');
+    }
+
+    isRezeble = true;
+  }
+});
